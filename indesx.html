@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Analytics Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard">
+        <header>
+            <h1>Business Analytics Dashboard</h1>
+            <p>Comprehensive view of sales, revenue, and performance metrics</p>
+        </header>
+        
+        <nav>
+            <button class="active" data-tab="overview">Overview</button>
+            <button data-tab="revenue">Revenue</button>
+            <button data-tab="sales">Sales</button>
+            <button data-tab="profit">Profitability</button>
+            <button data-tab="products">Product Analysis</button>
+        </nav>
+        
+        <main>
+            <!-- Overview Tab -->
+            <section id="overview" class="tab-content active">
+                <h2>Business Performance Overview</h2>
+                
+                <div class="cards">
+                    <div class="card">
+                        <h3>Total Revenue</h3>
+                        <p class="highlight">$229,000</p>
+                        <p>Across all channels and products</p>
+                    </div>
+                    <div class="card">
+                        <h3>Total Sales</h3>
+                        <p class="highlight blue">71,000</p>
+                        <p>Units sold this period</p>
+                    </div>
+                    <div class="card">
+                        <h3>Average Profit</h3>
+                        <p class="highlight purple">$230</p>
+                        <p>Per transaction</p>
+                    </div>
+                </div>
+                
+                <div class="chart-container">
+                    <div class="chart-card">
+                        <h3>Revenue by Time Slot</h3>
+                        <canvas id="revenueByTimeChart"></canvas>
+                    </div>
+                    <div class="chart-card">
+                        <h3>Weekly Trends</h3>
+                        <canvas id="weeklyTrendsChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="chart-card full">
+                    <h3>Revenue by Product Category</h3>
+                    <canvas id="revenueByCategoryChart"></canvas>
+                </div>
+            </section>
+            
+            <!-- Other sections hidden initially -->
+            <section id="revenue" class="tab-content">
+                <h2>Revenue Analysis</h2>
+                <!-- Revenue content -->
+                <div class="chart-container">
+                    <div class="chart-card">
+                        <h3>Revenue Distribution</h3>
+                        <canvas id="revenueDistributionChart"></canvas>
+                    </div>
+                    <div class="chart-card">
+                        <h3>Revenue by Week</h3>
+                        <canvas id="revenueByWeekChart"></canvas>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="sales" class="tab-content">
+                <h2>Sales Analysis</h2>
+                <!-- Sales content -->
+                <div class="chart-container">
+                    <div class="chart-card">
+                        <h3>Sales by Time Slot</h3>
+                        <canvas id="salesByTimeChart"></canvas>
+                    </div>
+                    <div class="chart-card">
+                        <h3>Sales by Week</h3>
+                        <canvas id="salesByWeekChart"></canvas>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="profit" class="tab-content">
+                <h2>Profitability Analysis</h2>
+                <!-- Profit content -->
+                <div class="cards">
+                    <div class="card">
+                        <h3>Average Profit - Holidays</h3>
+                        <p class="highlight">$260</p>
+                        <p>Per transaction</p>
+                    </div>
+                    <div class="card">
+                        <h3>Average Profit - Normal Days</h3>
+                        <p class="highlight blue">$195</p>
+                        <p>Per transaction</p>
+                    </div>
+                    <div class="card">
+                        <h3>Average Profit - Promotions</h3>
+                        <p class="highlight purple">$273</p>
+                        <p>Per transaction</p>
+                    </div>
+                </div>
+                
+                <div class="chart-card full">
+                    <h3>Profit by Scenario and Time Slot</h3>
+                    <canvas id="profitByScenarioChart"></canvas>
+                </div>
+            </section>
+            
+            <section id="products" class="tab-content">
+                <h2>Product Analysis</h2>
+                <!-- Products content -->
+                <div class="chart-card full">
+                    <h3>Top Products by Revenue</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Quantity</th>
+                                <th>Revenue</th>
+                                <th>Avg Price</th>
+                            </tr>
+                        </thead>
+                        <tbody id="productTable">
+                            <!-- Table rows will be inserted by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="chart-container">
+                    <div class="chart-card">
+                        <h3>Product Quantity vs Revenue</h3>
+                        <canvas id="productComparisonChart"></canvas>
+                    </div>
+                    <div class="chart-card">
+                        <h3>Product Category Distribution</h3>
+                        <canvas id="categoryPieChart"></canvas>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>© 2025 Business Analytics Dashboard | Data Last Updated: March 25, 2025</p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
